@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "mysql2018",
+    "database": "super_bettors",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "mysql2018",
+    "database": "super_bettors_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "mysql2018",
+    "database": "super_bettors_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

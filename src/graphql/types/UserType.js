@@ -1,11 +1,9 @@
 import { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLEnumType } from 'graphql';
 import { globalIdField } from 'graphql-relay';
-import { createNodeInterface, sequelizeConnection } from 'graphql-sequelize';
+import { sequelizeConnection } from 'graphql-sequelize';
 
-import { createSequelize } from '../../database';
 import db from '../../models';
-
-const { nodeInterface, nodeTypeMapper } = createNodeInterface(createSequelize);
+import { nodeInterface } from '../nodeInterface';
 
 const UserType = new GraphQLObjectType({
   name: 'User',
@@ -26,10 +24,6 @@ const UserType = new GraphQLObjectType({
     },
   }),
   interfaces: () => [nodeInterface],
-});
-
-nodeTypeMapper.mapTypes({
-  [db.User.name]: UserType,
 });
 
 export const UserConnectionType = sequelizeConnection({

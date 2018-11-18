@@ -1,12 +1,10 @@
 // @flow
 import { GraphQLObjectType, GraphQLNonNull, GraphQLInt } from 'graphql';
-import { resolver, createNodeInterface } from 'graphql-sequelize';
-
-import db from '../models';
+import { resolver } from 'graphql-sequelize';
 
 import UserType, { UserConnectionType } from './types/UserType';
 
-const { nodeField } = createNodeInterface(db.sequelize);
+import { nodeField } from './nodeInterface';
 
 export default new GraphQLObjectType({
   name: 'Query',
